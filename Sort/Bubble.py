@@ -1,4 +1,5 @@
 # バブルソート実装
+# 計算量　O（n^2）
 import random
 
 
@@ -12,6 +13,6 @@ def bubble_sort(numbers):
 
 
 if __name__ == '__main__':
-    nums = [random.randint(0, 1000) for _ in range(20)]
+    nums = [random.randint(0, 1000) for _ in range(50)]
     print(nums)
     print(bubble_sort(nums))

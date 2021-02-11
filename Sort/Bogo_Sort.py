@@ -16,8 +16,8 @@ def bogo_sort(numbers):
     return numbers
 
 
-if __name__ == '__main__':
-    nums = [random.randint(0, 1000) for _ in range(10)]
-    print(nums)
-    print(bogo_sort(nums))
+# if __name__ == '__main__':
+nums = [random.randint(0, 1000) for _ in range(10000)]
+print(nums)
+print(bogo_sort(nums))
 # test
