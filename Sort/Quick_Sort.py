@@ -1,19 +1,22 @@
 # Pivot と　jを比べて　Pivotが大きい場合 i += 1, Swap (list[i], list[j])をする
 # これをしていくとPivotより小さい数字は前に行き、Pivotより大きい数字はどんどん後ろに行く
 
-def partition(numbers, low, high):
+from typing import List
+
+
+def partition(numbers: List[int], low: int, high: int) -> int:
     i = low - 1
     pivot = numbers[high]
-    for j in range(low, high):  # lowはもともと０が入っている
+    for j in range(low, high):
         if numbers[j] <= pivot:
-            i += 1
+            i = i + 1
             numbers[i], numbers[j] = numbers[j], numbers[i]
     numbers[i+1], numbers[high] = numbers[high], numbers[i+1]
     return i+1
 
 
-def quick_sort(numbers):
-    def _quick_sort(numbers, low, high):
+def quick_sort(numbers: List[int]) -> List[int]:
+    def _quick_sort(numbers: List[int], low: int, high: int) -> None:
         if low < high:
             partition_index = partition(numbers, low, high)
             _quick_sort(numbers, low, partition_index-1)
